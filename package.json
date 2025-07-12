@@ -1,5 +1,5 @@
 {
-  "name": "u-morse",
+  "name": "@uys2000/u-morse",
   "version": "0.0.1",
   "description": "umorse app package for PHP backend",
   "main": "./src/index.mjs",
@@ -10,14 +10,21 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/uys2000-service/uauth.git"
+    "url": "git+https://github.com/uys2000-javascript-package/umorse.git"
   },
-  "homepage": "https://github.com/uys2000-service/uauth",
-  "author": "Mehmet Uysal (Uys2000) <hi@mehmetuysal.dev>",
+  "homepage": "https://github.com/uys2000-javascript-package/umorse",
+  "author": "Mehmet Uysal <hi@mehmetuysal.dev> (Uys2000)",
   "license": "MIT",
   "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e",
   "dependencies": {
     "@uys2000/u-host": "^0.0.1",
     "@uys2000/u-http": "^0.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/uys2000-javascript-package/umorse/issues"
   }
 }
