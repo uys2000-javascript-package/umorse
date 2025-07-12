@@ -11,7 +11,7 @@ export class UMorseService {
     if (path) this.path = path;
     if (token) this.token = token;
   }
-  async #header() {
+  #header() {
     return { Token: this.token };
   }
   async add(morse) {

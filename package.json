@@ -1,6 +1,6 @@
 {
   "name": "@uys2000/u-morse",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "umorse app package for PHP backend",
   "main": "./src/index.mjs",
   "module": "./src/index.mjs",
