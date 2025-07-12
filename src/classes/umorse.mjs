@@ -11,13 +11,13 @@ export class UMorseService {
     if (path) this.path = path;
     if (token) this.token = token;
   }
-  #header() {
+  getHeader() {
     return { Token: this.token };
   }
   async add(morse) {
     if (!this.token) return false;
     const url = this.host.host + this.path.add;
-    const response = await doPost(url, {}, morse, this.#header());
+    const response = await doPost(url, {}, morse, this.getHeader());
     const result = await response.json();
 
     if (!result.data?.status) throw new Error(result.message);
@@ -26,7 +26,7 @@ export class UMorseService {
   async list() {
     if (!this.token) return false;
     const url = this.host.host + this.path.list;
-    const response = await doGet(url, {}, this.#header());
+    const response = await doGet(url, {}, this.getHeader());
     const result = await response.json();
 
     if (!result.data?.sessions) throw new Error(result.message);
@@ -35,7 +35,7 @@ export class UMorseService {
   async remove(id) {
     if (!this.token) return false;
     const url = this.host.host + this.path.remove;
-    const response = await doDelete(url, { id }, this.#header());
+    const response = await doDelete(url, { id }, this.getHeader());
     const result = await response.json();
 
     if (!result.data?.status) throw new Error(result.message);
@@ -45,7 +45,7 @@ export class UMorseService {
   async getLastSync() {
     if (!this.token) return false;
     const url = this.host.host + this.path.lastSync;
-    const response = await doGet(url, {}, this.#header());
+    const response = await doGet(url, {}, this.getHeader());
     const result = await response.json();
 
     if (!result.data?.lastSync) throw new Error(result.message);
@@ -57,7 +57,7 @@ export class UMorseService {
     if (!this.token) return false;
     const url = this.host.host + this.path.sync;
     const body = { lastSync, morses };
-    const response = await doPatch(url, {}, body, this.#header());
+    const response = await doPatch(url, {}, body, this.getHeader());
     const result = await response.json();
 
     if (!result.data?.status) throw new Error(result.message);
